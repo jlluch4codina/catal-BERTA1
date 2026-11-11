@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ca" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Català amb la Berta 1</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti per celebrar encerts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Open+Sans:wght@400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Fredoka', 'Open Sans', system-ui, -apple-system, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .font-dyslexic {
+            font-family: 'Open Dyslexic', 'Comic Sans MS', 'Fredoka', sans-serif !important;
+            letter-spacing: 0.05em;
+            word-spacing: 0.1em;
+            line-height: 1.7;
+        }
+
+        /* Prevent scroll elastic bounce on mobile header/footer */
+        html, body {
+            overscroll-behavior-y: none;
+        }
+
+        /* Big touch targets */
+        .touch-btn {
+            min-height: 52px;
+            touch-action: manipulation;
+        }
+
+        /* Smooth transitions */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.25s ease-in-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="h-full text-slate-800 flex flex-col pb-24 select-none">
+
+    <!-- Top Sticky Header -->
+    <header class="bg-indigo-600 text-white shadow-md sticky top-0 z-40 px-4 py-3 border-b-4 border-indigo-800">
+        <div class="max-w-md mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-amber-400 text-indigo-950 p-2.5 rounded-2xl shadow-inner font-black">
+                    <i data-lucide="book-open-check" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black tracking-tight leading-none">Català amb la Berta 1</h1>
+                    <p class="text-xs text-indigo-200 font-bold mt-0.5">Gramàtica Fàcil i Visual</p>
+                </div>
+            </div>
+
+            <!-- Accessibility Quick Toggle -->
+            <button onclick="toggleDyslexicFont()" id="dyslexiaBtn" class="bg-indigo-700 active:bg-indigo-800 text-amber-300 border-2 border-indigo-400 px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 touch-btn shadow-sm">
+                <i data-lucide="type" class="w-4 h-4"></i>
+                <span>Font DDA</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area Container -->
+    <main class="max-w-md mx-auto w-full px-4 pt-4 flex-1">
+
+        <!-- TAB 1: TEORIA -->
+        <section id="tab-teoria" class="tab-content active space-y-4">
+
+            <!-- Banner Motivacional -->
+            <div class="bg-gradient-to-r from-amber-100 to-orange-100 border-2 border-amber-300 rounded-3xl p-4 flex items-center gap-3 shadow-sm">
+                <div class="bg-amber-400 text-amber-950 p-3 rounded-2xl text-2xl">💡</div>
+                <p class="text-sm font-bold text-amber-900 leading-snug">
+                    Apunts visuals i senzills per repassar quan vulguis des del mòbil!
+                </p>
+            </div>
+
+            <!-- Bloc 1: Sintagma Nominal -->
+            <article class="bg-white rounded-3xl p-5 border-3 border-blue-200 shadow-md">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-blue-500 text-white p-2 rounded-xl">
+                        <i data-lucide="box" class="w-5 h-5"></i>
+                    </span>
+                    <h2 class="text-lg font-black text-blue-950">1. El Sintagma Nominal (SN)</h2>
+                </div>
+
+                <p class="text-xs text-slate-600 mb-3 font-semibold">El nom és la paraula principal. Pot anar acompanyat de complements:</p>
+
+                <!-- Esquema SN adaptable a mobil -->
+                <div class="bg-blue-50 p-3 rounded-2xl border-2 border-blue-200 mb-4 text-center">
+                    <div class="text-xs font-extrabold text-blue-700 uppercase tracking-wider mb-2">Fórmula del Sintagma Nominal</div>
+                    <div class="flex flex-wrap items-center justify-center gap-1.5 font-black text-sm">
+                        <span class="bg-blue-500 text-white px-2.5 py-1.5 rounded-xl shadow-sm">
+                            (Determinant)
+                        </span>
+                        <span class="text-blue-600 text-lg">+</span>
+                        <span class="bg-emerald-500 text-white px-3 py-1.5 rounded-xl shadow-sm">
+                            NOM (N)
+                        </span>
+                        <span class="text-blue-600 text-lg">+</span>
+                        <span class="bg-purple-500 text-white px-2.5 py-1.5 rounded-xl shadow-sm">
+                            (Complements)
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Tipus de Complements -->
+                <div class="space-y-2 text-xs">
+                    <div class="font-bold text-slate-700">Els complements del Nom poden ser:</div>
+                    <div class="bg-purple-50 p-2.5 rounded-xl border border-purple-200 font-semibold text-purple-900 flex items-center gap-2">
+                        <span class="bg-purple-200 text-purple-800 px-2 py-0.5 rounded-lg font-bold">Adjectiu</span>
+                        <span>"La poma <strong class="underline decoration-purple-400">verda</strong>"</span>
+                    </div>
+                    <div class="bg-purple-50 p-2.5 rounded-xl border border-purple-200 font-semibold text-purple-900 flex items-center gap-2">
+                        <span class="bg-purple-200 text-purple-800 px-2 py-0.5 rounded-lg font-bold">S. Preposicional</span>
+                        <span>"La poma <strong class="underline decoration-purple-400">de l'arbre</strong>"</span>
+                    </div>
+                    <div class="bg-purple-50 p-2.5 rounded-xl border border-purple-200 font-semibold text-purple-900 flex items-center gap-2">
+                        <span class="bg-purple-200 text-purple-800 px-2 py-0.5 rounded-lg font-bold">Frase / Oració</span>
+                        <span>"La poma <strong class="underline decoration-purple-400">que hem collit</strong>"</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Bloc 2: L'apostrofació de 'LA' -->
+            <article class="bg-white rounded-3xl p-5 border-3 border-amber-200 shadow-md">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-amber-500 text-white p-2 rounded-xl">
+                        <i data-lucide="quote" class="w-5 h-5"></i>
+                    </span>
+                    <h2 class="text-lg font-black text-amber-950">2. L'Apostrofació de "LA"</h2>
+                </div>
+
+                <div class="bg-amber-50 border-2 border-amber-300 p-3 rounded-2xl mb-3">
+                    <p class="text-xs font-extrabold text-amber-900 text-center leading-relaxed">
+                        ⚠️ Regla important:<br>
+                        L'article femení <span class="bg-amber-300 text-amber-950 px-2 py-0.5 rounded-md">LA</span> <span class="text-red-600 underline">NO s'apostrofa</span> davant d'una <span class="underline">i</span> o <span class="underline">u</span> quan són <strong class="uppercase">àtones</strong> (no sonen fortes).
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-2 text-xs">
+                    <div class="bg-red-50 border border-red-200 p-3 rounded-xl flex justify-between items-center">
+                        <div>
+                            <div class="font-black text-red-700 text-sm">NO s'apostrofa (Àtona)</div>
+                            <div class="text-slate-600 font-medium">La u/i no porta la força de la veu.</div>
+                        </div>
+                        <div class="font-bold text-red-900 text-right bg-white px-2.5 py-1.5 rounded-lg border border-red-200 shadow-sm">
+                            La universitat<br>La indústria
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-xl flex justify-between items-center">
+                        <div>
+                            <div class="font-black text-emerald-700 text-sm">SÍ s'apostrofa (Tònica)</div>
+                            <div class="text-slate-600 font-medium">La i/u sons fortíssims!</div>
+                        </div>
+                        <div class="font-bold text-emerald-900 text-right bg-white px-2.5 py-1.5 rounded-lg border border-emerald-200 shadow-sm">
+                            L'illa<br>L'ona
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Bloc 3: Passos per analitzar -->
+            <article class="bg-white rounded-3xl p-5 border-3 border-emerald-200 shadow-md">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-emerald-500 text-white p-2 rounded-xl">
+                        <i data-lucide="list-checks" class="w-5 h-5"></i>
+                    </span>
+                    <h2 class="text-lg font-black text-emerald-950">3. Passos per analitzar una Frase</h2>
+                </div>
+
+                <ol class="space-y-2 text-xs font-bold">
+                    <li class="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 flex items-center gap-3">
+                        <span class="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0">1</span>
+                        <span>Localitzar els <strong class="text-emerald-800">Verbs</strong>.</span>
+                    </li>
+                    <li class="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 flex items-center gap-3">
+                        <span class="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0">2</span>
+                        <span>Mirar si està en <strong class="text-emerald-800">Plural o Singular</strong>.</span>
+                    </li>
+                    <li class="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 flex items-center gap-3">
+                        <span class="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0">3</span>
+                        <span>Localitzar el <strong class="text-emerald-800">Subjecte</strong>.</span>
+                    </li>
+                    <li class="bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 flex items-center gap-3">
+                        <span class="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0">4</span>
+                        <span>Comprovar si el subjecte és <strong class="text-emerald-800">El·líptic</strong> (amagat).</span>
+                    </li>
+                </ol>
+            </article>
+
+            <!-- Bloc 4 i 5: SV i Impersonals -->
+            <article class="bg-white rounded-3xl p-5 border-3 border-indigo-200 shadow-md space-y-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-indigo-500 text-white p-2 rounded-xl">
+                            <i data-lucide="activity" class="w-5 h-5"></i>
+                        </span>
+                        <h2 class="text-lg font-black text-indigo-950">4. Sintagma Verbal (SV)</h2>
+                    </div>
+                    <div class="bg-indigo-50 p-3 rounded-2xl border border-indigo-200 text-xs text-indigo-950 font-medium">
+                        <p class="font-extrabold text-indigo-800 mb-1">Estructura: SV = Verb + (Complements)</p>
+                        <p class="bg-white p-2 rounded-xl border border-indigo-200">
+                            Exemple: "<span class="font-bold underline decoration-indigo-500">Porta el cotxe al mecànic</span>"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-100 pt-3">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-rose-500 text-white p-2 rounded-xl">
+                            <i data-lucide="cloud-rain" class="w-5 h-5"></i>
+                        </span>
+                        <h2 class="text-lg font-black text-rose-950">5. Frases Impersonals</h2>
+                    </div>
+                    <p class="text-xs text-slate-600 font-semibold mb-2">Són frases que <strong class="text-rose-600">NO tenen Subjecte</strong>:</p>
+                    <ul class="space-y-1.5 text-xs font-bold text-slate-700">
+                        <li class="bg-rose-50 p-2 rounded-xl border border-rose-200">🌦️ Temps (Ex: <em>Plou molt</em>)</li>
+                        <li class="bg-rose-50 p-2 rounded-xl border border-rose-200">👉 <em>Hi ha / Hi havia</em> (Ex: <em>Hi ha pa</em>)</li>
+                        <li class="bg-rose-50 p-2 rounded-xl border border-rose-200">🔁 <em>Es + verb</em> (Ex: <em>Es viu bé aquí</em>)</li>
+                    </ul>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- TAB 2: EXERCICIS -->
+        <section id="tab-exercicis" class="tab-content space-y-4">
+            
+            <div class="flex items-center justify-between bg-white p-4 rounded-3xl border-2 border-indigo-200 shadow-sm">
+                <div>
+                    <h2 class="font-black text-indigo-950 text-base">Laboratori d'Exercicis</h2>
+                    <p class="text-xs text-slate-500 font-semibold">Toca les opcions per respondre</p>
+                </div>
+                <button onclick="carregarExercicisAleatoris()" class="bg-indigo-600 active:bg-indigo-700 text-white px-3.5 py-2.5 rounded-2xl text-xs font-bold flex items-center gap-1.5 touch-btn shadow-md">
+                    <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                    <span>Nous</span>
+                </button>
+            </div>
+
+            <!-- Contenidor dinàmic d'exercicis -->
+            <div id="exercicisContainer" class="space-y-4">
+                <!-- Es carregarà mitjançant JavaScript -->
+            </div>
+
+        </section>
+
+        <!-- TAB 3: TEST FINAL -->
+        <section id="tab-test" class="tab-content space-y-4">
+            
+            <div class="bg-white p-5 rounded-3xl border-2 border-indigo-200 shadow-md">
+                <div class="flex justify-between items-center mb-3">
+                    <span id="testProgressText" class="text-xs font-black text-indigo-600 uppercase tracking-wider">Pregunta 1 de 5</span>
+                    <span id="testScoreText" class="text-xs font-extrabold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Punts: 0</span>
+                </div>
+                
+                <!-- Barra de progrés -->
+                <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200 mb-4">
+                    <div id="progressBar" class="bg-indigo-600 h-full w-1/5 transition-all duration-300"></div>
+                </div>
+
+                <!-- Targeta de Pregunta -->
+                <div id="quizCard" class="space-y-4">
+                    <h3 id="quizQuestion" class="font-black text-slate-900 text-base leading-snug">
+                        Carregant qüestionari...
+                    </h3>
+
+                    <div id="quizOptions" class="space-y-2.5">
+                        <!-- Opcions dinàmiques -->
+                    </div>
+
+                    <div id="quizFeedback" class="hidden p-3.5 rounded-2xl text-xs font-bold leading-relaxed">
+                        <!-- Feedback immediat -->
+                    </div>
+
+                    <button id="nextQuestionBtn" onclick="seguentPreguntaTest()" class="hidden w-full bg-indigo-600 active:bg-indigo-700 text-white p-3.5 rounded-2xl text-sm font-black touch-btn shadow-lg items-center justify-center gap-2">
+                        <span>Següent Pregunta</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Resultat Final (Amagat per defecte) -->
+                <div id="quizResults" class="hidden text-center py-6 space-y-4">
+                    <div class="text-5xl">🏆</div>
+                    <h3 class="text-2xl font-black text-indigo-950">Molt bé, Berta!</h3>
+                    <p id="finalScoreMessage" class="text-sm font-bold text-slate-600">Has completat el test d'avaluació.</p>
+                    <button onclick="reiniciarTest()" class="w-full bg-indigo-600 active:bg-indigo-700 text-white p-4 rounded-2xl text-sm font-black touch-btn shadow-lg">
+                        Tornar a fer el Test (Preguntes Noves)
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 shadow-2xl z-50 px-3 py-2">
+        <div class="max-w-md mx-auto grid grid-cols-3 gap-2">
+            <button onclick="switchTab('teoria')" id="btn-tab-teoria" class="flex flex-col items-center justify-center p-2 rounded-2xl text-indigo-600 bg-indigo-50 font-black text-xs touch-btn transition-all">
+                <i data-lucide="book-open" class="w-6 h-6 mb-1"></i>
+                <span>Teoria</span>
+            </button>
+            <button onclick="switchTab('exercicis')" id="btn-tab-exercicis" class="flex flex-col items-center justify-center p-2 rounded-2xl text-slate-500 font-bold text-xs touch-btn transition-all">
+                <i data-lucide="pencil" class="w-6 h-6 mb-1"></i>
+                <span>Exercicis</span>
+            </button>
+            <button onclick="switchTab('test')" id="btn-tab-test" class="flex flex-col items-center justify-center p-2 rounded-2xl text-slate-500 font-bold text-xs touch-btn transition-all">
+                <i data-lucide="trophy" class="w-6 h-6 mb-1"></i>
+                <span>Test</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- BANC DE DADES D'EXERCICIS I TEST ---
+        const bancApostrofació = [
+            { paraula: "universitat", correcta: "La", rao: "'universitat' comença amb u àtona." },
+            { paraula: "illa", correcta: "L'", rao: "'illa' té la i tònica (forta)." },
+            { paraula: "indústria", correcta: "La", rao: "'indústria' comença amb i àtona." },
+            { paraula: "ona", correcta: "L'", rao: "Femení normal comença per vocal." },
+            { paraula: "història", correcta: "La", rao: "'història' comença amb hi àtona." },
+            { paraula: "igualtat", correcta: "La", rao: "'igualtat' comença amb i àtona." },
+            { paraula: "hora", correcta: "L'", rao: "'hora' té o vocal normal tònica." }
+        ];
+
+        const bancOracions = [
+            { frase: "Plou molt a la muntanya", tipus: "impersonal", rao: "És un fenomen meteorològic." },
+            { frase: "El cotxe blau corre ràpid", tipus: "expressat", rao: "El subjecte és 'El cotxe blau'." },
+            { frase: "Avui menjaré poma", tipus: "eliptic", rao: "Subjecte el·líptic: (Jo)." },
+            { frase: "Hi ha moltes pomes a l'arbre", tipus: "impersonal", rao: "Utilitza la forma 'Hi ha'." },
+            { frase: "Porta el cotxe al mecànic", tipus: "eliptic", rao: "Subjecte el·líptic: (Ell / Ella)." },
+            { frase: "Es viu molt bé en aquest poble", tipus: "impersonal", rao: "És impersonal amb 'Es + verb'." }
+        ];
+
+        const bancTest = [
+            {
+                pregunta: "Quina és la regla principal de l'article femení 'LA'?",
+                opcions: [
+                    "NO s'apostrofa davant i/u àtona",
+                    "S'apostrofa SEMPRE davant de qualsevol vocal",
+                    "Es canvia sempre per 'El'"
+                ],
+                correcta: 0,
+                explicacio: "Molt bé! Recorda: 'La universitat' o 'La indústria' no s'apostrofen perquè la i/u són àtones."
+            },
+            {
+                pregunta: "En el Sintagma Nominal 'La poma verda', quina funció fa 'verda'?",
+                opcions: [
+                    "Determinant",
+                    "Complement de l'Adjectiu",
+                    "Sintagma Preposicional"
+                ],
+                correcta: 1,
+                explicacio: "Correcte! 'Verda' és un adjectiu que fa de complement del nom 'poma'."
+            },
+            {
+                pregunta: "Quin és el primer pas recomanat per analitzar una frase?",
+                opcions: [
+                    "Buscar el nom",
+                    "Localitzar els verbs",
+                    "Mirar si hi ha adjectius"
+                ],
+                correcta: 1,
+                explicacio: "Excel·lent! El pas 1 sempre és trobar els verbs de la frase."
+            },
+            {
+                pregunta: "La frase 'Hi ha pa a la cuina' és de tipus:",
+                opcions: [
+                    "Amb subjecte el·líptic",
+                    "Frase Impersonal",
+                    "Sintagma Nominal pur"
+                ],
+                correcta: 1,
+                explicacio: "Genial! Les frases amb 'Hi ha / Hi havia' no tenen subjecte (impersonals)."
+            },
+            {
+                pregunta: "Com s'escriu correctament l'article per a la paraula 'illa'?",
+                opcions: [
+                    "La illa",
+                    "L'illa",
+                    "Les illa"
+                ],
+                correcta: 1,
+                explicacio: "Perfecte! S'apostrofa ('L'illa') perquè la 'i' és tònica (forta)."
+            }
+        ];
+
+        // --- ESTAT DE L'APLICACIÓ ---
+        let currentQuizIndex = 0;
+        let testScore = 0;
+        let testQuestionsCurrent = [];
+
+        // --- INICIALITZACIÓ ---
+        window.onload = function() {
+            lucide.createIcons();
+            carregarExercicisAleatoris();
+            iniciarTest();
+        };
+
+        // --- CANVI DE PANTALLES (TABS) ---
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+
+            // Reset tab button styles
+            ['teoria', 'exercicis', 'test'].forEach(t => {
+                const btn = document.getElementById(`btn-tab-${t}`);
+                if (t === tabName) {
+                    btn.className = "flex flex-col items-center justify-center p-2 rounded-2xl text-indigo-600 bg-indigo-50 font-black text-xs touch-btn transition-all";
+                } else {
+                    btn.className = "flex flex-col items-center justify-center p-2 rounded-2xl text-slate-500 font-bold text-xs touch-btn transition-all";
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- FONT PER A DISLÈXIA ---
+        function toggleDyslexicFont() {
+            document.body.classList.toggle('font-dyslexic');
+            const btn = document.getElementById('dyslexiaBtn');
+            if (document.body.classList.contains('font-dyslexic')) {
+                btn.classList.replace('bg-indigo-700', 'bg-amber-400');
+                btn.classList.replace('text-amber-300', 'text-indigo-950');
+            } else {
+                btn.classList.replace('bg-amber-400', 'bg-indigo-700');
+                btn.classList.replace('text-indigo-950', 'text-amber-300');
+            }
+        }
+
+        // --- GENERADOR D'EXERCICIS ALEATORIS ---
+        function carregarExercicisAleatoris() {
+            const container = document.getElementById('exercicisContainer');
+            container.innerHTML = '';
+
+            // Barrejar arrays
+            const apostrofsShuffled = [...bancApostrofació].sort(() => 0.5 - Math.random()).slice(0, 3);
+            const oracionsShuffled = [...bancOracions].sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            // Secció 1: Apostrofació
+            let card1 = document.createElement('div');
+            card1.className = 'bg-white p-5 rounded-3xl border-2 border-amber-200 shadow-md space-y-4';
+            card1.innerHTML = `
+                <h3 class="font-black text-amber-950 text-sm flex items-center gap-2">
+                    <span class="bg-amber-500 text-white text-xs px-2 py-1 rounded-lg">Part 1</span>
+                    Escull L' o La segons la regla:
+                </h3>
+            `;
+
+            apostrofsShuffled.forEach((item, idx) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'bg-amber-50 p-3.5 rounded-2xl border border-amber-200 flex flex-col gap-2.5';
+                itemDiv.innerHTML = `
+                    <div class="text-sm font-extrabold text-slate-800">___ ${item.paraula}</div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="comprovarApostrof(this, 'La', '${item.correcta}', '${item.rao}')" class="bg-white border-2 border-amber-300 text-amber-950 font-black p-3 rounded-xl touch-btn active:bg-amber-100 shadow-sm">La</button>
+                        <button onclick="comprovarApostrof(this, 'L\'', '${item.correcta}', '${item.rao}')" class="bg-white border-2 border-amber-300 text-amber-950 font-black p-3 rounded-xl touch-btn active:bg-amber-100 shadow-sm">L'</button>
+                    </div>
+                    <div class="feedback-box hidden text-xs font-bold p-2.5 rounded-xl"></div>
+                `;
+                card1.appendChild(itemDiv);
+            });
+
+            // Secció 2: Tipus de Frase
+            let card2 = document.createElement('div');
+            card2.className = 'bg-white p-5 rounded-3xl border-2 border-emerald-200 shadow-md space-y-4';
+            card2.innerHTML = `
+                <h3 class="font-black text-emerald-950 text-sm flex items-center gap-2">
+                    <span class="bg-emerald-500 text-white text-xs px-2 py-1 rounded-lg">Part 2</span>
+                    Classifica el subjecte d'aquesta frase:
+                </h3>
+            `;
+
+            oracionsShuffled.forEach((item, idx) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'bg-emerald-50 p-3.5 rounded-2xl border border-emerald-200 flex flex-col gap-2.5';
+                itemDiv.innerHTML = `
+                    <div class="text-sm font-extrabold text-slate-900 bg-white p-3 rounded-xl border border-emerald-200">"${item.frase}"</div>
+                    <div class="grid grid-cols-1 gap-2">
+                        <button onclick="comprovarFrase(this, 'expressat', '${item.tipus}', '${item.rao}')" class="bg-white border-2 border-emerald-300 text-emerald-950 font-bold p-3 rounded-xl touch-btn text-left text-xs shadow-sm">Subjecte Expressat</button>
+                        <button onclick="comprovarFrase(this, 'eliptic', '${item.tipus}', '${item.rao}')" class="bg-white border-2 border-emerald-300 text-emerald-950 font-bold p-3 rounded-xl touch-btn text-left text-xs shadow-sm">Subjecte El·líptic (amagat)</button>
+                        <button onclick="comprovarFrase(this, 'impersonal', '${item.tipus}', '${item.rao}')" class="bg-white border-2 border-emerald-300 text-emerald-950 font-bold p-3 rounded-xl touch-btn text-left text-xs shadow-sm">Frase Impersonal (sense subjecte)</button>
+                    </div>
+                    <div class="feedback-box hidden text-xs font-bold p-2.5 rounded-xl"></div>
+                `;
+                card2.appendChild(itemDiv);
+            });
+
+            container.appendChild(card1);
+            container.appendChild(card2);
+            lucide.createIcons();
+        }
+
+        function comprovarApostrof(btn, opcioTriada, opcioCorrecta, rao) {
+            const parent = btn.parentElement.parentElement;
+            const buttons = parent.querySelectorAll('button');
+            const feedback = parent.querySelector('.feedback-box');
+
+            buttons.forEach(b => b.disabled = true);
+
+            if (opcioTriada === opcioCorrecta) {
+                btn.className = "bg-emerald-500 text-white font-black p-3 rounded-xl touch-btn shadow-md";
+                feedback.className = "feedback-box block text-xs font-bold p-2.5 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-300";
+                feedback.innerText = "¡Molt bé! " + rao;
+                confetti({ particleCount: 30, spread: 60, origin: { y: 0.8 } });
+            } else {
+                btn.className = "bg-rose-500 text-white font-black p-3 rounded-xl touch-btn shadow-md";
+                feedback.className = "feedback-box block text-xs font-bold p-2.5 rounded-xl bg-rose-100 text-rose-900 border border-rose-300";
+                feedback.innerText = "Casi! La resposta correcta era " + opcioCorrecta + ". " + rao;
+            }
+        }
+
+        function comprovarFrase(btn, opcioTriada, opcioCorrecta, rao) {
+            const parent = btn.parentElement.parentElement;
+            const buttons = parent.querySelectorAll('button');
+            const feedback = parent.querySelector('.feedback-box');
+
+            buttons.forEach(b => b.disabled = true);
+
+            if (opcioTriada === opcioCorrecta) {
+                btn.className = "bg-emerald-500 text-white font-bold p-3 rounded-xl touch-btn text-left text-xs shadow-md";
+                feedback.className = "feedback-box block text-xs font-bold p-2.5 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-300";
+                feedback.innerText = "¡Excel·lent! " + rao;
+                confetti({ particleCount: 30, spread: 60, origin: { y: 0.8 } });
+            } else {
+                btn.className = "bg-rose-500 text-white font-bold p-3 rounded-xl touch-btn text-left text-xs shadow-md";
+                feedback.className = "feedback-box block text-xs font-bold p-2.5 rounded-xl bg-rose-100 text-rose-900 border border-rose-300";
+                feedback.innerText = "Incorrecte. " + rao;
+            }
+        }
+
+        // --- LÒGICA DEL TEST FINAL ---
+        function iniciarTest() {
+            currentQuizIndex = 0;
+            testScore = 0;
+            testQuestionsCurrent = [...bancTest].sort(() => 0.5 - Math.random());
+            document.getElementById('quizCard').classList.remove('hidden');
+            document.getElementById('quizResults').classList.add('hidden');
+            mostrarPreguntaTest();
+        }
+
+        function mostrarPreguntaTest() {
+            const q = testQuestionsCurrent[currentQuizIndex];
+            document.getElementById('testProgressText').innerText = `Pregunta ${currentQuizIndex + 1} de ${testQuestionsCurrent.length}`;
+            document.getElementById('testScoreText').innerText = `Punts: ${testScore}`;
+            document.getElementById('progressBar').style.width = `${((currentQuizIndex + 1) / testQuestionsCurrent.length) * 100}%`;
+
+            document.getElementById('quizQuestion').innerText = q.pregunta;
+            
+            const optionsDiv = document.getElementById('quizOptions');
+            optionsDiv.innerHTML = '';
+
+            q.opcions.forEach((opcio, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full bg-slate-50 border-2 border-slate-200 active:bg-indigo-50 text-slate-800 font-bold p-3.5 rounded-2xl touch-btn text-left text-xs shadow-sm transition-all flex items-center justify-between';
+                btn.innerHTML = `<span>${opcio}</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>`;
+                btn.onclick = () => seleccionarRespostaTest(index, q.correcta, q.explicacio);
+                optionsDiv.appendChild(btn);
+            });
+
+            document.getElementById('quizFeedback').classList.add('hidden');
+            document.getElementById('nextQuestionBtn').classList.add('hidden');
+            lucide.createIcons();
+        }
+
+        function seleccionarRespostaTest(indexTriat, indexCorrecte, explicacio) {
+            const optionsBtns = document.getElementById('quizOptions').querySelectorAll('button');
+            optionsBtns.forEach(btn => btn.disabled = true);
+
+            const feedback = document.getElementById('quizFeedback');
+            feedback.classList.remove('hidden');
+
+            if (indexTriat === indexCorrecte) {
+                testScore += 20;
+                optionsBtns[indexTriat].className = 'w-full bg-emerald-500 text-white font-bold p-3.5 rounded-2xl touch-btn text-left text-xs shadow-md flex items-center justify-between';
+                feedback.className = 'p-3.5 rounded-2xl text-xs font-bold leading-relaxed bg-emerald-100 text-emerald-900 border border-emerald-300';
+                feedback.innerText = explicacio;
+                confetti({ particleCount: 40, spread: 70, origin: { y: 0.7 } });
+            } else {
+                optionsBtns[indexTriat].className = 'w-full bg-rose-500 text-white font-bold p-3.5 rounded-2xl touch-btn text-left text-xs shadow-md flex items-center justify-between';
+                optionsBtns[indexCorrecte].className = 'w-full bg-emerald-100 border-2 border-emerald-500 text-emerald-950 font-bold p-3.5 rounded-2xl touch-btn text-left text-xs shadow-sm flex items-center justify-between';
+                feedback.className = 'p-3.5 rounded-2xl text-xs font-bold leading-relaxed bg-rose-100 text-rose-900 border border-rose-300';
+                feedback.innerText = "Oh! La resposta correcta era l'altra. Ànims per a la següent!";
+            }
+
+            document.getElementById('testScoreText').innerText = `Punts: ${testScore}`;
+            
+            const nextBtn = document.getElementById('nextQuestionBtn');
+            nextBtn.classList.remove('hidden');
+            nextBtn.classList.add('flex');
+        }
+
+        function seguentPreguntaTest() {
+            currentQuizIndex++;
+            if (currentQuizIndex < testQuestionsCurrent.length) {
+                mostrarPreguntaTest();
+            } else {
+                document.getElementById('quizCard').classList.add('hidden');
+                document.getElementById('quizResults').classList.remove('hidden');
+                document.getElementById('finalScoreMessage').innerText = `Has aconseguit una puntuació de ${testScore} sobre 100 punts. ¡Fantàstic treball!`;
+                confetti({ particleCount: 100, spread: 100, origin: { y: 0.6 } });
+            }
+        }
+
+        function reiniciarTest() {
+            iniciarTest();
+        }
+    </script>
+</body>
+</html>
